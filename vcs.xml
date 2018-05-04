@@ -8,6 +8,9 @@
         </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="C:\Users\mareting\StudioProjects" />
+    <option name="cloneParentDir" value="C:\Users\mareting\Desktop" />
+  </component>
+  <component name="Vcs.Log.App.Settings">
+    <option name="MIGRATED" value="true" />
   </component>
 </application>
