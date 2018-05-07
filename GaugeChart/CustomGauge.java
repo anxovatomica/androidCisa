@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.v4.content.*;
+//import android.support.v4.content.*;
 import android.graphics.Shader;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -51,7 +51,7 @@ public class CustomGauge extends View {
         // stroke style
         setStrokeWidth(a.getDimension(R.styleable.CustomGauge_gaugeStrokeWidth, 10));
         //setStrokeColor(a.getColor(R.styleable.CustomGauge_gaugeStrokeColor, ContextCompat.getColor(context, android.R.color.darker_gray)));
-        setStrokeCap(a.getString(R.styleable/*R.styleable.CustomGauge_gaugeStrokeCap*/));
+        setStrokeCap(a.getString(R.styleable.CustomGauge_gaugeStrokeCap));
 
         // angle start and sweep (opposite direction 0, 270, 180, 90)
         setStartAngle(a.getInt(R.styleable.CustomGauge_gaugeStartAngle, 0));

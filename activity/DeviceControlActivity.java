@@ -2,9 +2,13 @@ package ru.sash0k.bluetooth_terminal.activity;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -22,6 +26,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
@@ -29,6 +35,7 @@ import java.util.Date;
 
 import ru.sash0k.bluetooth_terminal.DeviceData;
 import ru.sash0k.bluetooth_terminal.R;
+import ru.sash0k.bluetooth_terminal.Start;
 import ru.sash0k.bluetooth_terminal.Utils;
 import ru.sash0k.bluetooth_terminal.bluetooth.DeviceConnector;
 import ru.sash0k.bluetooth_terminal.bluetooth.DeviceListActivity;
@@ -90,7 +97,8 @@ public final class DeviceControlActivity extends BaseActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEND) {
-                    sendCommand(null);
+                    String commandString = "nothing";
+                    sendCommand(null, commandString);
                     return true;
                 }
                 return false;
@@ -102,7 +110,8 @@ public final class DeviceControlActivity extends BaseActivity {
                 if (event.getAction() == KeyEvent.ACTION_DOWN) {
                     switch (keyCode) {
                         case KeyEvent.KEYCODE_ENTER:
-                            sendCommand(null);
+                            String commandString = "nothing";
+                            sendCommand(null, commandString);
                             return true;
                         default:
                             break;
@@ -111,13 +120,161 @@ public final class DeviceControlActivity extends BaseActivity {
                 return false;
             }
         });
+        /*ON CLICK FOR RULES BUTTONS*/
+        final TextView rule = (TextView) findViewById(R.id.rule);
+        Button gapnum = (Button) findViewById(R.id.gapnum);
+        gapnum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gapnum";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+
+        });
         Button gapnam = (Button) findViewById(R.id.gapnam);
         gapnam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendCommand(null);
+                String commandString = "gapnam";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
             }
-
+        });
+        Button gappow = (Button) findViewById(R.id.gappow);
+        gappow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gappow";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button gaptim = (Button) findViewById(R.id.gaptim);
+        gaptim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gaptim";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button gapsin = (Button) findViewById(R.id.gapsin);
+        gapsin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gapsim";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button gapeti = (Button) findViewById(R.id.gapeti);
+        gapeti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gapeti";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button gapdti = (Button) findViewById(R.id.gapdti);
+        gapdti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gapdti";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button gc10di = (Button) findViewById(R.id.gc10di);
+        gc10di.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gc10di";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button gc15di = (Button) findViewById(R.id.gc15di);
+        gc15di.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gc15di";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button gc20di = (Button) findViewById(R.id.gc20di);
+        gc20di.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "gc20di";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button sderun = (Button) findViewById(R.id.sderun);
+        sderun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "sderun";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button sdesto = (Button) findViewById(R.id.sdesto);
+        sdesto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "sdesto";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button sacprg = (Button) findViewById(R.id.sacprg);
+        sacprg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "sacprg";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button sacpow = (Button) findViewById(R.id.sacpow);
+        sacpow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "sacpow";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button sactim = (Button) findViewById(R.id.sactim);
+        sactim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "sactim";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button saceti = (Button) findViewById(R.id.saceti);
+        saceti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "saceti";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
+        });
+        Button sacdti = (Button) findViewById(R.id.sacdti);
+        sacdti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String commandString = "sacdti";
+                rule.setText(commandString);
+                sendCommand(null, commandString);
+            }
         });
     }
     // ==========================================================================
@@ -320,9 +477,8 @@ public final class DeviceControlActivity extends BaseActivity {
      * Отправка команды устройству
      */
 
-    public void sendCommand(View view){
+    public void sendCommand(View view, String commandString){
 
-            String commandString = "gapnam";
             if (commandString.isEmpty()) return;
 
             // Дополнение команд в hex
