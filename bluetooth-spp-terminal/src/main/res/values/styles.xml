@@ -1,5 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo"/>
     <style name="DialogTheme" parent="@android:style/Theme.Holo.Dialog"/>
+    <style name="AppTheme.Launcher">
+    <!-- Optional, on Android 5+ you can modify the colorPrimaryDark color to match the windowBackground color for further branding-->
+    <item name="colorPrimaryDark">@android:color/white</item>
+
+    </style>
 </resources>

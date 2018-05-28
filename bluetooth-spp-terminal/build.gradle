@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         minSdkVersion 15
@@ -11,7 +11,19 @@ android {
         versionCode 2
         versionName "1.1"
     }
-
+    dependencies {
+        //implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
+        implementation 'org.apache.directory.studio:org.apache.commons.io:2.4'
+        implementation 'com.android.support:appcompat-v7:24.2.1'
+        testImplementation 'junit:junit:4.12'
+        implementation 'com.felipecsl:gifimageview:2.1.0'
+        implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
+        implementation 'commons-io:commons-io:2.4'
+        implementation fileTree(dir: 'libs', include: ['*.jar'])
+        androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+    }
     lintOptions {
         checkReleaseBuilds false
     }

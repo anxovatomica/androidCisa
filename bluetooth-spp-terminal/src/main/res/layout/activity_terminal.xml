@@ -1,11 +1,31 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#1147a9"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:scrollX="@dimen/activity_vertical_margin">
+
+    <Button
+        android:id="@+id/sdesto"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tableLayout1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:text="Stop" />
+
+    <Button
+        android:id="@+id/sderun"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sdesto"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="179dp"
+        android:text="Run" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,153 +33,140 @@
         android:orientation="horizontal"
         android:weightSum="5">
 
-        <EditText
-            android:id="@+id/command_edittext"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:hint="@string/command_hint"
-            android:imeOptions="actionSend" />
-
-        <Button
-            android:id="@+id/send_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="sendCommand"
-            android:text="@string/button_send" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/log_textview"
-        android:layout_width="match_parent"
-        android:layout_height="116dp"
+        android:layout_width="430dp"
+        android:layout_height="125dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:clickable="false"
         android:enabled="true"
         android:scrollbars="vertical"
         android:textColor="@android:color/white" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="293dp">
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableLayout1"
+        android:layout_width="406dp"
+        android:layout_height="293dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="15dp"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
 
-        <LinearLayout
+        <TableRow
+            android:id="@+id/tableRow1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/gapnum"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Program Number" />
+            <TextView
+                android:id="@+id/textView2"
+                android:text="Program Name"
+                android:textStyle="bold"></TextView>
 
-            <Button
+            <TextView
                 android:id="@+id/gapnam"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Program Name" />
+                android:gravity="center_horizontal"
+                android:text="-"></TextView>
+        </TableRow>
 
-            <Button
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:text="Program Number"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/gapnum"
+                android:gravity="center_horizontal"
+                android:text="-"></TextView>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:text="Program Power"
+                android:textStyle="bold"></TextView>
+
+            <TextView
                 android:id="@+id/gappow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Power" />
+                android:gravity="center_horizontal"
+                android:text="-"></TextView>
+        </TableRow>
 
-            <Button
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:text="Program Active Time"
+                android:textStyle="bold"></TextView>
+
+            <TextView
                 android:id="@+id/gaptim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Active Program Time" />
+                android:gravity="center_horizontal"
+                android:text="-"></TextView>
+        </TableRow>
 
-            <Button
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:text="Program Sieve Number"
+                android:textStyle="bold"></TextView>
+
+            <TextView
                 android:id="@+id/gapsin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Program Sieve Number" />
+                android:gravity="center_horizontal"
+                android:text="-"></TextView>
 
-            <Button
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_height="match_parent"
+                android:text="Enable Time"
+                android:textStyle="bold"></TextView>
+
+            <TextView
                 android:id="@+id/gapeti"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Active Program Enable Time" />
+                android:gravity="center_horizontal"
+                android:text="-"></TextView>
+        </TableRow>
+    </TableLayout>
 
-            <Button
-                android:id="@+id/gapdti"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Get Avtive Program Disable Time" />
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="101dp"
+        android:layout_marginStart="136dp"
+        android:text="Start!" />
 
-            <Button
-                android:id="@+id/gc10di"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Calibration 100 diameter" />
-
-            <Button
-                android:id="@+id/gc15di"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Calibration 150 diameter" />
-
-            <Button
-                android:id="@+id/gc20di"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Calibration 200 diameter" />
-
-            <Button
-                android:id="@+id/sderun"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Run" />
-
-            <Button
-                android:id="@+id/sdesto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Stop" />
-
-            <Button
-                android:id="@+id/sacprg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Set Acive Program" />
-
-            <Button
-                android:id="@+id/sacpow"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Set Power" />
-
-            <Button
-                android:id="@+id/sactim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Set Time" />
-
-            <Button
-                android:id="@+id/saceti"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Enable Time" />
-
-            <Button
-                android:id="@+id/sacdti"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Disable Time" />
-
-        </LinearLayout>
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/rule"
-        android:layout_width="112dp"
-        android:layout_height="29dp"
-        android:layout_marginLeft="50dp"
-        android:text="-"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large" />
 
     <!-- GAUGE CHART -->
     <!--app:gaugePointEndColor="md_red_500"
@@ -167,4 +174,4 @@
         app:gaugeDividerColor="md_yellow_500"
         app:gaugeStrokeColor="md_grey_400"-->
 
-</LinearLayout>
+</RelativeLayout>
