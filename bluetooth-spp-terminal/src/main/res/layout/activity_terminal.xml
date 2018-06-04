@@ -168,6 +168,8 @@
         android:text="Start!" />
 
 
+
+
     <!-- GAUGE CHART -->
     <!--app:gaugePointEndColor="md_red_500"
         app:gaugePointStartColor="md_green_500"
